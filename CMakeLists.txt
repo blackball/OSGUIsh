@@ -1,15 +1,10 @@
-#
-# OSGUIsh
-#
-
-# General settings
 project(OSGUIsh)
 cmake_minimum_required(VERSION 2.6)
 set(CPACK_PACKAGE_VERSION_MAJOR "0")
 set(CPACK_PACKAGE_VERSION_MINOR "3")
 
-find_package(OpenSceneGraph 2.8 REQUIRED
-    COMPONENTS osgViewer osgUtil osgGA osgDB osgText)
+set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS ON)
+find_package(OpenSceneGraph 3.4 COMPONENTS osg osgDB osgGA osgFX osgText osgViewer osgManipulator osgUtil)
 
 set(Boost_USE_STATIC_LIBS OFF)
 find_package(Boost 1.39 REQUIRED COMPONENTS signals)
